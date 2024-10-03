@@ -1,9 +1,9 @@
 import { type FC, type PropsWithChildren } from "react";
 
-type CourseGoalProps = PropsWithChildren<{
+type CourseGoalItemProps = PropsWithChildren<{
     title: string;
 }>;
-const CourseGoal: FC<CourseGoalProps> = ({ title, children }: CourseGoalProps) => {
+const CourseGoalItem: FC<CourseGoalItemProps> = ({ title, children }: CourseGoalItemProps) => {
     return (
         <article>
             <div>
@@ -14,4 +14,4 @@ const CourseGoal: FC<CourseGoalProps> = ({ title, children }: CourseGoalProps) =
         </article>
     );
 }
-export default CourseGoal;
+export default CourseGoalItem;

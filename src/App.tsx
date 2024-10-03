@@ -1,14 +1,8 @@
-import CourseGoal from "./components/CourseGoal";
-
 import goalsImg from "./assets/goals.jpg";
 import Header from "./components/Header";
 import { useState } from "react";
-
-export type CourseGoal = {
-  title: string;
-  description: string;
-  id: number;
-};
+import { CourseGoal } from "./type/courseGoal";
+import CourseGoalList from "./components/CourseGoalList";
 
 export default function App() {
   const [goals, setGoals] = useState<CourseGoal[]>([]);

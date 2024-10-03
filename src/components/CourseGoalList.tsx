@@ -1,22 +1,22 @@
 import { FC } from "react";
-import { CourseGoal } from "../App";
-
+import { CourseGoal } from "../type/courseGoal";
+import CourseGoalItem from "./CourseGoalItem";
 
 type CourseGoalListProp = {
-    goals: CourseGoal[]
+  goals: CourseGoal[]
 }
 
-const CourseGoalList:FC<CourseGoalListProp> = ({goals}) => {
-return (<ul>
+const CourseGoalList: FC<CourseGoalListProp> = ({ goals }) => {
+  return (<ul>
     {goals.map((goal) => {
       return (
         <li key={goal.id}>
-          <CourseGoal title={goal.title}>
+          <CourseGoalItem title={goal.title}>
             <p>{goal.description}</p>
-          </CourseGoal>
+          </CourseGoalItem>
         </li>
       );
     })}
   </ul>);
 }
-export dewfault CourseGoalList;
+export default CourseGoalList;
