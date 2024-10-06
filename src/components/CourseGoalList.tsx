@@ -1,23 +1,24 @@
-import { FC } from "react";
-import { CourseGoal } from "../type/courseGoal";
-import CourseGoalItem from "./CourseGoalItem";
+import CourseGoal from './CourseGoal.tsx';
+import { type CourseGoal as CGoal } from '../App.tsx';
 
-type CourseGoalListProp = {
-  goals: CourseGoal[];
-  handleDelete: (id: number) => void;
-}
+type CourseGoalListProps = {
+  goals: CGoal[];
+  onDeleteGoal: (id: number) => void;
+};
 
-const CourseGoalList: FC<CourseGoalListProp> = ({ goals, handleDelete }) => {
-  return (<ul>
-    {goals.map((goal) => {
-      return (
+export default function CourseGoalList({
+  goals,
+  onDeleteGoal,
+}: CourseGoalListProps) {
+  return (
+    <ul>
+      {goals.map((goal) => (
         <li key={goal.id}>
-          <CourseGoalItem title={goal.title} handleDelete={() => handleDelete(goal.id)}>
+          <CourseGoal id={goal.id} title={goal.title} onDelete={onDeleteGoal}>
             <p>{goal.description}</p>
-          </CourseGoalItem>
+          </CourseGoal>
         </li>
-      );
-    })}
-  </ul>);
+      ))}
+    </ul>
+  );
 }
-export default CourseGoalList;
