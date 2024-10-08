@@ -13,7 +13,7 @@ export default function App() {
       </p>
       <Input id="name" label="insert name" type="text"></Input>
       <Input id="age" label="age here" type="number"></Input>
-      <Container as={Button}></Container>
+      <Container as={Button} onClick={() => {}} type="button">Cliccami</Container>
     </main>
   );
 }
