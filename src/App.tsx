@@ -1,5 +1,6 @@
 import Input from './components/Input.tsx';
 import Button from './components/Button.tsx';
+import Container from './components/Container.tsx';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       </p>
       <Input id="name" label="insert name" type="text"></Input>
       <Input id="age" label="age here" type="number"></Input>
+      <Container as={Button}></Container>
     </main>
   );
 }
