@@ -1,13 +1,23 @@
 import Input from './components/Input.tsx';
-import { useRef } from 'react';
+import Form from './components/Form.tsx';
+import Button from './components/Button.tsx';
 
 export default function App() {
-  const input = useRef<HTMLInputElement>(null);
-  
+  const handleSave = (data: unknown) => {
+    const extractedData = data as {name: string, age: number};
+
+  };
   return (
     <main>
-      <Input label="test" id="test" ref={input}>
-      </Input>
+      <Form onSave={handleSave}>
+        <Input type="text" label="Name" id="name">
+        </Input>
+        <Input type="number" label="Age" id="age">
+        </Input>
+        <p>
+          <Button>Save</Button>
+        </p>
+      </Form>
     </main>
   );
 }
