@@ -1,27 +1,17 @@
-import Input from './components/Input.tsx';
-import Form, { FormHandle } from './components/Form.tsx';
-import Button from './components/Button.tsx';
-import { useRef } from 'react';
+import AddTimer from './components/AddTimer.tsx';
+import Header from './components/Header.tsx';
+import Timers from './components/Timers.tsx';
 
-export default function App() {
-  const customForm = useRef<FormHandle>(null);
-
-  const handleSave = (data: unknown) => {
-    const extractedData = data as {name: string, age: number};
-    customForm.current?.clear();
-  };
-  
+function App() {
   return (
-    <main>
-      <Form onSave={handleSave} ref={customForm}>
-        <Input type="text" label="Name" id="name">
-        </Input>
-        <Input type="number" label="Age" id="age">
-        </Input>
-        <p>
-          <Button>Save</Button>
-        </p>
-      </Form>
-    </main>
+    <>
+      <Header />
+      <main>
+        <AddTimer />
+        <Timers />
+      </main>
+    </>
   );
 }
+
+export default App;
